@@ -16,6 +16,12 @@ export class LoadableButton extends Button {
   }
 }
 
+export class IconButton extends Button {
+  showIcon(): void {
+    console.log(`show icon for ${this.render()}`);
+  }
+}
+
 export interface ButtonImplementor {
   render(): string;
   onClick(): void;
@@ -47,5 +53,19 @@ export class MacButtonImplementor implements ButtonImplementor {
 
   loading(): void {
     console.log('mac loading');
+  }
+}
+
+export class LinuxButtonImplementor implements ButtonImplementor {
+  render(): string {
+    return 'linux render';
+  }
+
+  onClick(): void {
+    console.log('linux click');
+  }
+
+  loading(): void {
+    console.log('linux loading');
   }
 }
